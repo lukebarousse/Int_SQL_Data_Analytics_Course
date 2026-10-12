@@ -71,7 +71,7 @@ Data Nerds! This repo contains all the files needed to follow along my free cour
 2. Run all cells in the notebook.   
 
 #### Troubleshooting:
-- **`No module named 'psycopg'` error?** Your copy of the notebook is out of date. Re-open it with the "Open in Colab" button, or in the first code cell change `%sql postgresql://` to `%sql postgresql+psycopg2://` and run it again.
+- **`No module named 'psycopg'` error?** Your copy of the notebook is out of date (copies saved to Google Drive don't update). In the setup cell, change `%sql postgresql://` to `%sql postgresql+psycopg2://`, then click **Runtime > Restart session and run all**. Or re-open the notebook with its "Open in Colab" button.
    
 ---
 
@@ -126,7 +126,7 @@ Data Nerds! This repo contains all the files needed to follow along my free cour
 > pip install --upgrade jupysql
 > ```
 5. Activate the `sql_course` environment in the notebook.
-6. Connect to the database with the `psycopg2` driver named in the URL (the first code cell of each notebook already does this). Without `+psycopg2`, SQLAlchemy 2.1+ looks for the `psycopg` driver and fails with `No module named 'psycopg'`.
+6. Connect to the database with the `psycopg2` driver named in the URL (the setup cell of each notebook already does this). Without `+psycopg2`, SQLAlchemy 2.1+ looks for the `psycopg` driver and fails with `No module named 'psycopg'`.
 > ```
 > %sql postgresql+psycopg2://postgres:password@localhost:5432/contoso_100k
 > ```
